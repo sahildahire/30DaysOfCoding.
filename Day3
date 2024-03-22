@@ -1,0 +1,49 @@
+// My code on how to make your application interactive by taking the values from the concole though?
+// 1   System.console().readLine?
+// 2   Scanner sc=new Scanner(System.in);?
+
+import java.util.Scanner;
+
+public class program {
+    public static void main(String args[]) {
+
+        int currentyear=2022;
+
+        try{
+            System.out.println(getInputFromConsole(currentyear));
+
+        }catch (NullPointerException e){
+            System.out.println(getInputFromScanner(currentyear));
+
+        }
+
+        System.out.println(getInputFromConsole(currentyear));
+
+        System.out.println(getInputFromScanner(currentyear));
+
+    }
+    public static String getInputFromConsole(int currentyear) {
+
+        String name=System.console().readLine("hi,whats your name?");
+        System.out.println("hi "+name+", Thanks for taking the course");
+    String dateoBirth=System.console().readLine("what year were you born?");
+    int age=currentyear-Integer.parseInt(dateoBirth);
+
+    return "so you are"+age+" years old";
+
+
+    }
+
+    public static String getInputFromScanner(int currentYear) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter the name ");
+        String name=sc.nextLine();
+        System.out.println("enter the age");
+        String age=sc.nextLine();
+        System.out.println("the name of the person is"+name);
+        System.out.println("the age of the person is"+Integer.parseInt(age));
+
+        return "";
+
+    }
+}
